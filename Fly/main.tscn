@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://b4mlrsubrahql"]
+
+[ext_resource type="Script" uid="uid://btmxxkb04egy7" path="res://main.gd" id="1_ig7tw"]
+[ext_resource type="Texture2D" uid="uid://dk3vtlq2gty6f" path="res://background.png" id="2_0xm2m"]
+
+[node name="Main" type="Node2D"]
+position = Vector2(616, 328)
+script = ExtResource("1_ig7tw")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -480.0
+offset_top = -324.0
+offset_right = 480.0
+offset_bottom = 312.0
+color = Color(0.215686, 1, 1, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(0, -1.99998)
+scale = Vector2(1.2, 1.19259)
+texture = ExtResource("2_0xm2m")
