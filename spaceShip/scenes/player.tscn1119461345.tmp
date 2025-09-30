@@ -1,0 +1,52 @@
+[gd_scene load_steps=9 format=3 uid="uid://dvvhnh5s26vph"]
+
+[ext_resource type="Texture2D" uid="uid://dsdxiwmkf5r3f" path="res://assets/ship1.png" id="1_3vyb7"]
+[ext_resource type="Script" uid="uid://c1a42sybicv8l" path="res://scripts/controlled.gd" id="1_qhqgy"]
+[ext_resource type="Texture2D" uid="uid://cepyn3coxkydf" path="res://assets/shield.png" id="2_g2els"]
+[ext_resource type="Texture2D" uid="uid://ce3reukikf8dc" path="res://assets/animations/SpaceShip Fire1.png" id="4_tuyoq"]
+[ext_resource type="Texture2D" uid="uid://qxs7n2vkfx0t" path="res://assets/animations/SpaceShip Fire2.png" id="5_fjrip"]
+[ext_resource type="Texture2D" uid="uid://m7gpscfogiou" path="res://assets/animations/SpaceShip Fire3.png" id="6_smehm"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qhqgy"]
+radius = 40.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ur7pv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_tuyoq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_fjrip")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_smehm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[node name="Player" type="Node2D"]
+script = ExtResource("1_qhqgy")
+
+[node name="ShipArea" type="Area2D" parent="."]
+
+[node name="ShipCollision" type="CollisionShape2D" parent="ShipArea"]
+position = Vector2(0, -3)
+shape = SubResource("CircleShape2D_qhqgy")
+
+[node name="ShipSprite" type="Sprite2D" parent="ShipArea"]
+texture = ExtResource("1_3vyb7")
+
+[node name="ShieldSprite" type="Sprite2D" parent="ShipArea/ShipSprite"]
+position = Vector2(9.536743e-07, 3.33786e-06)
+scale = Vector2(1.4769229, 1.5)
+texture = ExtResource("2_g2els")
+
+[node name="ShipFire" type="AnimatedSprite2D" parent="ShipArea/ShipSprite"]
+position = Vector2(2, -44)
+rotation = 2.9825013
+sprite_frames = SubResource("SpriteFrames_ur7pv")
+frame = 2
+frame_progress = 0.6917387

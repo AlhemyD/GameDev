@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dvvhnh5s26vph"]
+
+[ext_resource type="Texture2D" uid="uid://dsdxiwmkf5r3f" path="res://assets/ship1.png" id="1_3vyb7"]
+[ext_resource type="Script" uid="uid://c1a42sybicv8l" path="res://scripts/controlled.gd" id="1_qhqgy"]
+[ext_resource type="Texture2D" uid="uid://cepyn3coxkydf" path="res://assets/shield.png" id="2_g2els"]
+
+[node name="Player" type="Node2D"]
+script = ExtResource("1_qhqgy")
+
+[node name="PositionLabel" type="Label" parent="."]
+offset_left = -64.0
+offset_top = -56.0
+offset_right = 64.0
+offset_bottom = -33.0
+
+[node name="ShipSprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_3vyb7")
+
+[node name="ShieldSprite" type="Sprite2D" parent="ShipSprite"]
+position = Vector2(9.536743e-07, 3.33786e-06)
+scale = Vector2(1.4769229, 1.5)
+texture = ExtResource("2_g2els")

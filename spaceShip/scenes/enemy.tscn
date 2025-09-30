@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://capc8micuynrb"]
+
+[ext_resource type="Texture2D" uid="uid://cmqwpxdfpqgl0" path="res://assets/ship2.png" id="1_7p1mj"]
+[ext_resource type="Script" uid="uid://d0vrpp2n6v0hi" path="res://scripts/persecutor.gd" id="1_md0e3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_md0e3"]
+radius = 27.0
+
+[node name="Enemy" type="Node2D"]
+script = ExtResource("1_md0e3")
+
+[node name="ShipArea" type="Area2D" parent="."]
+
+[node name="ShipSprite" type="Sprite2D" parent="ShipArea"]
+texture = ExtResource("1_7p1mj")
+
+[node name="ShipCollision" type="CollisionShape2D" parent="ShipArea"]
+shape = SubResource("CircleShape2D_md0e3")

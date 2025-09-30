@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dphorl3ohx0fd"]
+
+[ext_resource type="Texture2D" uid="uid://c82mxfuo5n0wx" path="res://assets/bee.png" id="1_1q2x0"]
+[ext_resource type="Script" uid="uid://gtso3c61ypkd" path="res://scripts/perlin_motion.gd" id="2_vie5o"]
+
+[node name="Bee" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_1q2x0")
+script = ExtResource("2_vie5o")
