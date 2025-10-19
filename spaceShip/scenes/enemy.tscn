@@ -16,3 +16,6 @@ texture = ExtResource("1_7p1mj")
 
 [node name="ShipCollision" type="CollisionShape2D" parent="ShipArea"]
 shape = SubResource("CircleShape2D_md0e3")
+
+[node name="Line2D" type="Line2D" parent="ShipArea"]
+points = PackedVector2Array(0, 0, 0, 0)

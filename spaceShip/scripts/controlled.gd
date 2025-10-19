@@ -2,6 +2,7 @@ extends Node2D
 
 var speed: float = 0
 var max_speed: float = 500
+var velocity: Vector2 = Vector2(0, 0)
 
 @onready var shield:Sprite2D = get_node("ShipArea/ShipSprite/ShieldSprite")
 @onready var shipFire:AnimatedSprite2D = get_node("ShipArea/ShipSprite/ShipFire")
@@ -36,8 +37,10 @@ func _process(delta):
 			speed = 0
 	var x = 0.1 * cos(rotation+PI/2)
 	var y = 0.1 * sin(rotation + PI/2)
-	position += speed * delta * Vector2(x,y).normalized()
+	velocity = speed * delta * Vector2(x,y).normalized()
+	position += velocity
 	animation_process()
+	
 	
 func damage():	
 	if shield.visible:
